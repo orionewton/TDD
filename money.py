@@ -9,7 +9,7 @@ class Currency:
         return self.amount * mult
 
     def __eq__(self, b: Self):
-        return self.amount == b.amount
+        return self.amount == b.amount and type(b) is type(self)
 
 
 class Dollar(Currency):

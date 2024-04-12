@@ -14,8 +14,8 @@ def test_franc_multiplication():
 
 
 def test_equality():
-    a = Dollar(5)
-    b = Dollar(5)
-    c = Dollar(6)
-    assert a == b
-    assert not a == c
+    assert Dollar(5) == Dollar(5)
+    assert not Dollar(5) == Dollar(6)
+    assert Franc(5) == Franc(5)
+    assert not Franc(5) == Franc(6)
+    assert not Dollar(5) == Franc(5)

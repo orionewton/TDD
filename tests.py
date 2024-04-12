@@ -1,18 +1,21 @@
-from money import Dollar
+from money import Dollar, Franc
 
 
 def test_multiplication():
     five = Dollar(5)
-    product = Dollar(five.times(2))
-    assert product.amount == 10
-    product = Dollar(five.times(3))
-    assert product.amount == 15
+    assert Dollar(10) == Dollar(five.times(2))
+    assert Dollar(15) == Dollar(five.times(3))
+
+
+def test_franc_multiplication():
+    five = Franc(5)
+    assert Franc(10) == Franc(five.times(2))
+    assert Franc(15) == Franc(five.times(3))
 
 
 def test_equality():
     a = Dollar(5)
     b = Dollar(5)
     c = Dollar(6)
-    assert a.equals(b)
-    assert not a.equals(c)
-
+    assert a == b
+    assert not a == c

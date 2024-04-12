@@ -1,6 +1,12 @@
+from typing import Self
+
+
 class Dollar:
     def __init__(self, val: int):
-        self.amount = 10
+        self.amount = val
 
-    def times(self, val):
-        pass
+    def times(self, mult):
+        return self.amount * mult
+
+    def equals(self, b: Self):
+        return self.amount == b.amount
